@@ -31,7 +31,8 @@ class FormComponent extends Component
 
         foreach ($this->fields() as $field) {
             if (!isset($this->form_data[$field->name])) {
-                $this->form_data[$field->name] = $field->default ?? ($field->type == 'checkboxes' ? [] : null);
+                $array = in_array($field->type, ['checkbox', 'file']);
+                $this->form_data[$field->name] = $field->default ?? ($array ? [] : null);
             }
         }
     }
