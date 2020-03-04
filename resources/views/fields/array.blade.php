@@ -7,7 +7,7 @@
         @if(isset($form_data[$field->name]) && $form_data[$field->name])
             <ul class="list-group mb-2">
                 @foreach($form_data[$field->name] as $key => $value)
-                    <div class="list-group-item p-2">
+                    <div class="list-group-item list-group-item-action p-2">
                         <div class="form-row">
                             @foreach($field->array_fields as $array_field)
                                 @include('laravel-livewire-forms::array-fields.' . $array_field->type)
