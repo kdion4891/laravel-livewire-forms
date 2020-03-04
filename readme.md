@@ -98,7 +98,7 @@ Optional [Eloquent](https://laravel.com/docs/master/eloquent) model instance att
 
 Example:
 
-    @livewire('user-edit-form', $user)
+    @livewire('user-edit-form', ['model' => $user])
     
 Example of using the model in the component `success` method:
 
