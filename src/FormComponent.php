@@ -59,11 +59,6 @@ class FormComponent extends Component
         ];
     }
 
-    public function updated($field)
-    {
-        $this->validateOnly($field, $this->rules(true));
-    }
-
     public function submit()
     {
     
