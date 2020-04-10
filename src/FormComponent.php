@@ -66,18 +66,31 @@ class FormComponent extends Component
 
     public function submit()
     {
-        $this->validate($this->rules());
+    
+        $attributes = [];
+
+        /** @var Field $field */
+        foreach ($this->fields() as $field) {
+
+            if ($field->type === 'array') {
+
+                /** @var Field $arrayField */
+                foreach ($field->array_fields as $arrayField) {
+                    $attributes[$field->key . '.*.' .  $arrayField->name] = $arrayField->placeholder ?? $arrayField->name;
+                }
+
+            } else {
+                $attributes[$field->key] = $field->label;
+            }
+        }
+        
+        $this->validate($this->rules(), [], $attributes);
 
         $field_names = [];
         foreach ($this->fields() as $field) $field_names[] = $field->name;
         $this->form_data = Arr::only($this->form_data, $field_names);
 
         $this->success();
-    }
-
-    public function errorMessage($message)
-    {
-        return str_replace('form data.', '', $message);
     }
 
     public function success()
