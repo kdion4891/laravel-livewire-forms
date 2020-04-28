@@ -70,7 +70,7 @@ class FormComponent extends Component
 
         $field_names = [];
         foreach ($this->fields() as $field) $field_names[] = $field->name;
-        $this->form_data = Arr::only($this->form_data, $field_names);
+        $this->form_data = Arr::only($this->form_data ?? [], $field_names);
 
         $this->success();
     }
