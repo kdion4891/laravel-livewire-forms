@@ -556,3 +556,6 @@ Publishing the form view files:
 Publishing the config file:
 
     php artisan vendor:publish --tag=form-config
+
+# License
+MIT
