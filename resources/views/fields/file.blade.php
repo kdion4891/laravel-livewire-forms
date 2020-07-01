@@ -22,7 +22,7 @@
                     <li class="list-group-item p-2">
                         <div class="row align-items-center">
                             <div class="col">
-                                <a href="{{ Storage::url($value['file']) }}" target="_blank">
+                                <a href="{{ Storage::disk($value['disk'])->url($value['file']) }}" target="_blank">
                                     <i class="fa fa-fw {{ $this->fileIcon($value['mime_type']) }} mr-1"></i>{{ $value['name'] }}
                                 </a>
                             </div>
