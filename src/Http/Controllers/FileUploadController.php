@@ -2,11 +2,9 @@
 
 namespace Kdion4891\LaravelLivewireForms\Controllers;
 
-use Illuminate\Routing\Controller;
-
-class LivewireFormsController extends Controller
+class FileUploadController
 {
-    public function fileUpload()
+    public function __invoke()
     {
         return call_user_func([request()->input('component'), 'fileUpload']);
     }
