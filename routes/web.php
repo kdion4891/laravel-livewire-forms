@@ -1,7 +1,7 @@
 <?php
+use \Kdion4891\LaravelLivewireForms\Controllers\FileUploadController;
 
 Route::group(['middleware' => 'web'], function () {
-    Route::post('/laravel-livewire-forms/file-upload', function () {
-        return call_user_func([request()->input('component'), 'fileUpload']);
-    })->name('laravel-livewire-forms.file-upload');
+    Route::post('/laravel-livewire-forms/file-upload', FileUploadController::class)
+        ->name('laravel-livewire-forms.file-upload');
 });
