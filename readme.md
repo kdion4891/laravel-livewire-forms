@@ -1,3 +1,9 @@
+# No Longer Maintained
+
+Please check out my latest package here: https://github.com/bastinald/laravel-livewire-forms
+
+
+
 # Laravel Livewire Forms
 
 ![Laravel Livewire Forms](https://i.imgur.com/YB0gEJ8.gif)
